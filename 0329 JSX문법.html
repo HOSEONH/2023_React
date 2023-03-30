@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="./css/JSX.css">
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        // 함수형태로 컴포넌트 작성
+        function MyApp(){
+            // 자바스크립트의 요소 사용가능(변수/연산자 등)
+            const name = 'React';
+            const user = '홍길동';
+            const login = true;
+            // 변수에 html태그를 담아서 사용가능
+            const tag = <h1>반갑습니다</h1>;
+
+            // 스타일 작성 // 변수에 담아서
+            const style = {
+                color : 'aqua'
+            }
+
+            const content = undefined;
+
+            // return을 통해 화면에 출력되는 html 작성
+            return (
+                // 반드시 부모요소는 하나만 있어야한다
+                // 리액트에서 style을 넣어줄 때는 {}안에 객체형식으로 작성
+                // style은 중괄호로 고정
+                <div style={style}>
+                    <h1 style={{color:"red"}} className="react-style font-size">처음 만나는 {name}</h1>
+                    <p className={"react-style"}>
+                        className은 필요에 따라 {}에 넣거나 "" 기본은 ""
+                        원하는 태그를 추가하여 작성가능
+                    </p>
+
+                    <h1>if문 대신에 삼항연산자 사용</h1>
+                    <div>
+                        {name === "React" ? (
+                            <h1>리액트입니다</h1>
+                        ) : (
+                            <h2>리액트가 아닙니다</h2>
+                        ) }
+                    </div>
+                    {
+                        user === "홍길동" ?
+                        <div>
+                            <h1>홍길동입니다</h1>
+                            <p>여러개의 태그를 사용할 때 부모로 감싸서 사용</p>
+                        </div>
+                            :
+                            <h1>다른 사람입니다</h1>
+                    }
+                    {
+                        // login === true ?
+                        login ?
+                        // 삼항연산자로 작성한 html에 변수나 함수를 쓰고 싶다면
+                        // 다시 {}를 통해 작성해주어야한다. 중괄호 작성🔥
+                        <div>
+                            <h1>로그인에 성공하였습니다</h1>
+                            <h3>{user}입니다</h3>
+                        </div>
+                        :
+                        <div>
+                            <h1>로그인이 필요합니다</h1>
+                            <p>리액트를 시작하였습니다</p>
+                        </div>
+                    }
+                    {"//참일 때만 내용 출력"}
+                    <h1>&&연산자를 이용한 조건부렌더링</h1>
+                    {name === "Vue" && <h1>리액트입니다</h1>}
+                    {login &&
+                        <div>
+                            <h1>로그인에 성공하였습니다</h1>
+                            {tag}
+                            <h3>홍길동입니다.</h3>
+                        </div>
+                    }
+
+                </div>
+            )
+        }
+        // html에서 가상돔을 출력할 공간을 가져와서 연결
+        const container = document.querySelector("#root");
+        const root = ReactDOM.createRoot(container);
+        // 원하는 html코드를 화면에 출력
+        // html코드를 가진 컴포넌트를 출력
+        // <MyApp /> 태그처럼 불러와서 사용 : XML
+        // <MyApp>텍스트<MyApp/> : HTML
+        // 안에 값이 들어가지 않는 경우 바로 / 끝을 맺어서 사용해줄 수 있다.
+        root.render(<MyApp/>);
+
+    </script>
+</body>
+</html>
