@@ -3,6 +3,7 @@ import PropsComp from './components/PropsComp';
 import CountComp from './components/CountComp';
 import CountPropsComp from './components/CountPropsComp';
 import LoginComp from './components/LoginComp';
+import MemoComp from './components/MemoComp';
 
 function App() {
   return (
@@ -22,7 +23,17 @@ function App() {
         <button>에서 login true 만들기
         <h1> name 출력 > login값이 true일 때 화면에 보임
       */}
-      <LoginComp/>
+      <LoginComp />
+
+      {/* 기록장 작성
+        memoList : [
+          {id:1, memo:"기록", time:new Date()},
+          {id:2, memo:"연습", time:new Date()}\
+        ]
+        state를 이용하여, memoList의 내용을 map으로
+        li태그에 출력하세요
+        input 태그로 입력, button 클릭 추가, li 클릭 삭제 */}
+        <MemoComp />
     </div>
   );
 }
