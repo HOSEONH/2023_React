@@ -67,6 +67,8 @@ export class MapComp extends Component {
         // filter(걸러냄)
         // : (value)=>return 참 일때, value 값을 return한 새 배열에 추가
         const newStudents = this.state.students.filter((s)=>s.id !== student.id)
+        // 결과값이 참일 때만 배열로 들어간다
+        // 요소의 값들이 들어가기 때문에
         this.setState({students : newStudents})
     }
 
@@ -125,6 +127,7 @@ export class MapComp extends Component {
                                 <td 
                                     // 이름을 눌렀을 때 이름을 가진 객체를 배열에서 삭제
                                     // student의 값을 전달하기 위해서 화살표함수로 감싸기
+                                    // 매개변수가 들어갈 때 값을 전달할 때는 반드시 화살표 함수로 감싸기 !
                                     onClick={()=>{this.deleteStudent(student)}}
                                 >
                                     {student.name}
@@ -149,7 +152,7 @@ export class MapComp extends Component {
 
 export default MapComp
 
-/* map에서 사용할 컴포넌트 */
+/* map에서 사용할 컴포넌트 */ //반복해야할 모양이 많다면 컴포넌트로 만들기 
 class TableComp extends Component {
     // 호출되는 컴포넌트(부모)에서 값을 받아서 씀 : props
     render(){

@@ -17,6 +17,8 @@ import RefDomEvent from './components/RefDomEvent';
 
 import MapComp from './components/MapComp';
 
+import LifeCycle from './components/LifeCycle';
+
 /* 리액트에서 오류가 뜨는 이유
 1. 존재하지 않는 컴포넌트 출력
   (컴포넌트를 만든 이루에 이름은 바꾸지 말 것
@@ -59,6 +61,9 @@ function App() {
 
       {/* 컴포넌트의 반복 */}
       <MapComp />
+
+      {/* 라이프사이클 */}
+      <LifeCycle />
     </div>
   );
 }

@@ -3,14 +3,14 @@ import React, { Component } from 'react'
 export class MemoComp extends Component {
     constructor(props){
         super(props);
-        this.state = {
+        this.state = { // setState로 수정하고 싶을 때 사용
             memoList : [
                 {id:1, memo:"기록", time:new Date()},
                 {id:2, memo:"연습", time:new Date()},
             ],
             inputMemo : "" // 2
         }
-        this.id = 3 // 6
+        this.id = 3 // 6 출력되지는 않지만 값을 저장하고 싶을 때 이 값은 바뀌지 않고 계산식에 따라 값이 수정되는 것을 볼 수 있다
     }
 
     addMemo = ()=>{ // 4
@@ -46,8 +46,10 @@ export class MemoComp extends Component {
         const second = time.getSeconds();
         return `${hours}:${minutes}:${second}`
     }
+    // 리턴해줄 때 숫자나 문자로 해주어야 바로 볼 수 있다 
+    // 객체 자체를 내보내면 오류가 나기 때문에 
 
-    render() {
+    render() { // 항상 똑같은 값을 쓸 때 state값을 편하게 쓰고 싶을 떄 render안에 넣어서 업데이트 할 때마다 초기화된다 // 비구조화할당을 통해 편하게 사용하고 싶을 때 사용??
         return (
             <div>
                 <h3>메모리스트 출력</h3>
@@ -71,6 +73,7 @@ export class MemoComp extends Component {
                         >
                             {memo.id}. {memo.memo}
                             시간 : {this.printClock(memo.time)}
+                            {/* 괄호 사용하여 작성하면 결과값을 retunr 값을 출력 메소드 만들어 사용  */}
                         </li> // 사용해줄 때는 key값? 유일한 id????
                         ) // 1
                     }
