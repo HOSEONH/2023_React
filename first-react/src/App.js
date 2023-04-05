@@ -19,6 +19,12 @@ import MapComp from './components/MapComp';
 
 import LifeCycle from './components/LifeCycle';
 
+import ArrowComponent from './components/ArrowComponent';
+
+import ArrowTest from './components/ArrowTest';
+
+import ArrowState from './components/ArrowState';
+
 /* 리액트에서 오류가 뜨는 이유
 1. 존재하지 않는 컴포넌트 출력
   (컴포넌트를 만든 이루에 이름은 바꾸지 말 것
@@ -64,6 +70,21 @@ function App() {
 
       {/* 라이프사이클 */}
       <LifeCycle />
+
+      {/* 함수형 컴포넌트 */}
+      <ArrowComponent text="문자열을 전달"/>
+      <ArrowComponent>children으로 전달</ArrowComponent>
+
+      {/* 함수형 컴포넌트 실습
+        아래 컴포넌트를 함수형으로 만들고 출력하기
+        name="green" : h3 태그로 출력
+        check={true} : check값이 true일 때 name 출력
+        children="환영합니다" : p 태그로 출력
+      */}
+      <ArrowTest name="green" check={true}>환영합니다</ArrowTest>
+
+      {/* 함수형 컴포넌트의 state 사용 */}
+      <ArrowState/>
     </div>
   );
 }
