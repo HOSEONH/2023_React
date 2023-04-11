@@ -88,7 +88,7 @@ const TodoComp = () => {
 
     // 데이터 값을 확인하기 위해 화면의 HTML 구성
     // 데이터 값만 확인 - HTML 뼈대
-    // 레이아웃 구성 확인 - css 함께 
+    // 레이아웃 구성 확인 - css 함께
     return (
         <div>
             <h1>Todo-List</h1>
