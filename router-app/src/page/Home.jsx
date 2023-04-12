@@ -17,6 +17,9 @@ export default function Home() {
             {/* to의 속성값으로 자바스크립트의 문자열 가능 */}
             <Link to={`/story/${fruit}`}>Story</Link>
 
+            <Link to={`/articles`}>Articles</Link>
+            <hr />
+            {/* 쿼리스트링값을 About에 전달하는 컴포넌트 */}
             <FormComp />
 
             <hr />
