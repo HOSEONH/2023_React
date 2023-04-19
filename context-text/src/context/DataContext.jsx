@@ -22,7 +22,7 @@ const DataProvider = ({children}) => {
     // state로 작성한 값들을 value에 넣기
     const value = {
         state : { login, name },
-        action : {setLogin, setName}
+        action : { setLogin, setName }
     }
 
     // return을 통해서 provider에서 쓰도록 내보내줌
@@ -33,6 +33,6 @@ const DataProvider = ({children}) => {
 
 
 // 감싸서 값을 전달하기 위한 컴포넌트
-export { DataProvider};
+export { DataProvider };
 // 값을 가져오기위해 접근하는 값
 export default DataContext;

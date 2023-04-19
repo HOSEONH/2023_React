@@ -16,6 +16,7 @@ export default function Home() {
             <br/>
             {/* to의 속성값으로 자바스크립트의 문자열 가능 */}
             <Link to={`/story/${fruit}`}>Story</Link>
+            {/* 왜 에러떠? */}
 
             <Link to={`/articles`}>Articles</Link>
             <hr />

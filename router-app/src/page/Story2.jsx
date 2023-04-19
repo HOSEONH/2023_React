@@ -9,11 +9,11 @@ export default function Story2() {
     // *주소에 위치에 맞게 전달
     // app.js path='/story/:value'
     // >> 주소로 값을 전달할 때 /story/apple
-    const prams = useParams();
+    const params = useParams();
     const { name } = useParams(); // 객체
     return (
         <div>
-            <h1>{prams.name}Story2</h1>
+            <h1>{params.name}Story2</h1>
             <p>{name}Story2 페이지입니다.</p>
         </div>
     )

@@ -27,27 +27,27 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Layout />}>
-        {/* app.js 안에서 Route 이용해서 주소와 컴포넌트 연결
-          path : 주소 '/' : 첫 화면에 보이는 주소
-          element : 컴포넌트 {}를 통해서 전달
-        */}
-        <Route index element={<Home />} />
-        <Route path='/about' element={<About />} />
-        {/* <Story /> 컴포넌트를 만들어서, '/story' 주소로 연결
-          확인은 주소창에 http://localhost:3000/story 로 확인
-          위에 작성했던 것과 동일
-        */}
-        {/* URL 파리미터를 이용한 값 전달
-          path의 주소에 값이 들어갈 공간에 이름 작성
-          값은 브라우저에 주소창에 입력했을 때 값이 들어감
-        */}
-        {/* page 폴더에 Story2List.jsx를 만들고
-            fruit 배열을 들고와서 Link 작성
-            Link를 클릭했을 때 Story2가 보일 수 있게 작성하세요
-        */}
-        <Route path='/story2' element={<Story2List />} >
-          <Route path='/story2/:value' element={<Story2 />} />
-        </Route>
+          {/* app.js 안에서 Route 이용해서 주소와 컴포넌트 연결
+            path : 주소 '/' : 첫 화면에 보이는 주소
+            element : 컴포넌트 {}를 통해서 전달
+          */}
+          <Route index element={<Home />} />
+          <Route path='/about' element={<About />} />
+          {/* <Story /> 컴포넌트를 만들어서, '/story' 주소로 연결
+            확인은 주소창에 http://localhost:3000/story 로 확인
+            위에 작성했던 것과 동일
+          */}
+          {/* URL 파리미터를 이용한 값 전달
+            path의 주소에 값이 들어갈 공간에 이름 작성
+            값은 브라우저에 주소창에 입력했을 때 값이 들어감
+          */}
+          {/* page 폴더에 Story2List.jsx를 만들고
+              fruit 배열을 들고와서 Link 작성
+              Link를 클릭했을 때 Story2가 보일 수 있게 작성하세요
+          */}
+          <Route path='/story2' element={<Story2List />} >
+            <Route path='/story2/:name' element={<Story2 />} />
+          </Route>
 
         {/* <Story />를 복사하여 <Story2 />로 수정하여 사용
           path='/story2/ ~~~ '로 연결

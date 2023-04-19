@@ -7,12 +7,14 @@ export default function Story2List() {
     return (
         <div>
             <h3>Story2의 목록</h3>
+
             <Outlet />
+            
             {
                 fruits.map((f, i)=>(
                     <Link to={`/story2/${f}`} key={i}>{f}</Link>
-                ))
-            }
+                    ))
+                }
         </div>
     )
 }
