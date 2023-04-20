@@ -2,6 +2,10 @@ import React, { useState } from "react";
 
 const DataContext = React.createContext("");
 
+// 컴포넌트 밖에서 생성한 값의 경우
+// 자동으로 값이 바뀌지 않기에 안에서 메소드를 작성후, 전달
+let cid = 3;
+
 // 데이터 값을 가진 Provider컴포넌트 작성
 // DataContext에 들어갈 value값의 특징
 // : 2개 이상의 페이지 컴포넌트에서 사용할 때 작성
@@ -64,11 +68,29 @@ const DataProvider = ({children}) => {
         ]
     )
 
+    // 좋아요 배열은 user와 연결해서 사용 ! >> 지금은 연결하지 않고 진행
+    // 좋아요 배열을 사용하기 위함 useState()
+    // 좋아요 표시를 목록에서 먼저 표시 (먼저)
+    // 게시글 안에서 표시 (나중에 생각)
+    const [likelist, setLikelist] = useState(
+        [
+            {
+                borderId : 1,
+                title : "첫번째 게시글 입니다"
+            }
+        ]
+    )
+
+    // cid를 사용하기위한 메소드 (호출하면 1씩 증가)
+    const cidCount = () => {
+        cid++;
+    }
+
 
     // value에 담을 데이터 정리
     const value = {
-        state : { boardlist, id, user, commentlist },
-        action : { setBoardlist, setId, setUser, setCommentlist }
+        state : { boardlist, id, user, commentlist, cid, likelist },
+        action : { setBoardlist, setId, setUser, setCommentlist, cidCount, setLikelist }
     }
     
     return <DataContext.Provider value={value}>
