@@ -42,8 +42,13 @@ const DataProvider = ({children}) => {
     const [id, setId] = useState(4);
 
     // user값 을 사용하기위해 useState() 작성
+    // 마이페이지 작성을 위해 임의로 값 넣음 : 나중에 수정
     const [user, setUser] = useState(
-        {writer :"익명", login:false}
+        {
+          writer : "green",
+          login : true,
+          profile : require('../img/profile.jpg')
+    }
     )
 
     // commentlist 값 저장
